@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/jpg" href="1241163.jpg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peter Bo-han Pan</title>
@@ -15,56 +14,84 @@
         }
 
         body {
-            background-color: #ffffff;
+            background-color: #fdf6f6;
             color: #333333;
             line-height: 1.6;
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         header {
-            text-align: center;
-            padding: 4rem 0;
-            border-bottom: 1px solid #eaeaea;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 2rem 0;
+            margin-bottom: 4rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            background-color: #e8fae8;
+            border-radius: 50%;
         }
 
         .name {
-            font-size: 4rem;
-            color: #000000;
-            margin-bottom: 1rem;
-            font-weight: 700;
+            font-size: 1.5rem;
+            color: #333;
+            font-weight: 600;
         }
 
         nav {
-            margin: 2rem 0;
             display: flex;
             gap: 2rem;
-            justify-content: center;
         }
 
         nav a {
             color: #333333;
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            border: 1px solid #000000;
-            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
             transition: all 0.3s ease;
+            position: relative;
         }
 
-        nav a:hover {
-            background-color: rgba(0, 0, 0, 0.1);
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #333;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
         }
 
         section {
-            margin: 4rem 0;
-            padding: 2rem;
-            background-color: #f8f9fa;
-            border-radius: 4px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 3rem 0;
+            width: 100%;
+            padding: 0;
+            background: none;
+            box-shadow: none;
         }
 
         h2 {
@@ -207,6 +234,52 @@
             font-size: 1.1rem;
         }
 
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin: 4rem 0;
+        }
+
+        .profile-image-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #ffcdd2;
+            position: relative;
+            overflow: hidden;
+            background-image: url('1241163.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .profile-content {
+            flex: 1;
+        }
+
+        .profile-content h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
@@ -235,20 +308,29 @@
 <body>
     <div class="container">
         <header>
-            <h1 class="name">Peter Bo-han Pan</h1>
-            <p>Student & Tech Enthusiast</p>
+            <div class="logo">
+                <div class="logo-circle"></div>
+                <div class="name">PETER BO-HAN PAN</div>
+            </div>
+            <nav>
+                <a href="#about">ABOUT</a>
+                <a href="#education">EDUCATION</a>
+                <a href="#swimming">SWIMMING</a>
+                <a href="#blog">BLOG</a>
+            </nav>
         </header>
 
-        <nav>
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#swimming">Swimming</a>
-            <a href="#contact">Contact</a>
-        </nav>
-
         <section id="about">
-            <h2>About Me</h2>
-            <p>A passionate student currently attending University Highschool with a strong interest in technology and innovation.</p>
+            <div class="profile-container">
+                <div class="profile-image-container">
+                    <div class="profile-image"></div>
+                </div>
+                <div class="profile-content">
+                    <h1>Peter Bo-han Pan</h1>
+                    <p class="subtitle">(yes, it's a mouthful)</p>
+                    <p class="description">I'm a student at University Highschool specializing in technology and innovation. I'm passionate about swimming and creative problem-solving.</p>
+                </div>
+            </div>
         </section>
 
         <section id="education">
